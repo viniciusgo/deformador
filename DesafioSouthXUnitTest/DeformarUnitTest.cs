@@ -2,7 +2,7 @@ using DesafioSouth;
 using System;
 using Xunit;
 
-namespace XUnitTestProject1
+namespace DesafioSouthXUnitTest
 {
     public class DeformarUnitTest
     {
