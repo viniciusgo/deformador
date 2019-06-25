@@ -11,17 +11,17 @@ namespace DesafioSouth
 
         private static string Evaluator(Match match)
         {
-            var letter = match.Value[0];
-            if (letter == 'z')
-                letter = 'a';
-            else if (letter == 'Z')
-                letter = 'A';
+            var letra = match.Value[0];
+            if (letra == 'z')
+                letra = 'a';
+            else if (letra == 'Z')
+                letra = 'A';
             else
-                letter = (char)((int)letter + 1);
+                letra = (char)((int)letra + 1);
 
-            letter = vogais.Contains(letter) ? $"{letter}".ToUpper()[0] : letter;
+            letra = vogais.Contains(letra) ? $"{letra}".ToUpper()[0] : letra;
 
-            return $"{letter}";
+            return $"{letra}";
         }
 
         public static string Deformar(string entrada)
@@ -33,8 +33,7 @@ namespace DesafioSouth
                 throw new ArgumentException("entrada");
 
             var matchEvaluator = new MatchEvaluator(Evaluator);
-            var result = Regex.Replace(entrada, "[a-z]", matchEvaluator, RegexOptions.IgnoreCase);
-            return result;
+            return Regex.Replace(entrada, "[a-z]", matchEvaluator, RegexOptions.IgnoreCase);
         }
     }
 }
